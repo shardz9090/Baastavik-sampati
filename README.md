@@ -1,2 +1,2 @@
 # Baastavik-sampati
-Final year project
+Final year project of house price prediction
