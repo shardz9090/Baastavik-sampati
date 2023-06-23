@@ -23,7 +23,6 @@ urlpatterns = [
     path('about/', views.about, name='about'),
     path('service/', views.service, name='service'),
     path('feature/', views.feature, name='feature'),
-    path('team/', views.teams, name='team'),
     path('contact/', views.contact, name='contact'),
     path('predict/', views.predict, name='predict'), 
 ]
