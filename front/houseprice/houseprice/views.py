@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from team.models import team
+# from team.models import team
 from django.views.decorators.csrf import csrf_exempt
 from django.conf import settings
 import joblib
@@ -10,7 +10,6 @@ from django.conf import settings
 from sklearn.preprocessing import OneHotEncoder
 import numpy as np
 from sklearn.preprocessing import LabelEncoder
-
 dataset = pd.read_csv("houseprice/latlong.csv")
 
 def home(request):
