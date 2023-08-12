@@ -1,0 +1,73 @@
+{%include "header.html"%}
+<div class="owl-carousel-item position-relative">
+  <img class="img-fluid" src="/static/img/table.png" alt="" />
+  <div
+    class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center"
+    style="background: rgba(6, 3, 21, 0.5)"
+  >
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-md-8 mx-auto">
+          <table class="table bg-transparent rounded border">
+            <h1 style="color: white;"><u>Your House Details</u></h1>
+            <thead>
+              <tr>
+                <th scope="col" style="color: white;">S no.</th>
+                <th scope="col" style="color: white;">Labels</th>
+                <th scope="col" style="color: white;">Your House Data</th>
+              </tr>
+            </thead>
+            <tbody>
+                          <tbody>
+              <tr>
+                <th scope="row" style="color: white;">1</th>
+                <td style="color: white;">Land Size</td>
+                <td style="color: white;">{{data.land}} Square feet</td>
+              </tr>
+              <tr>
+                <th scope="row" style="color: white;">2</th>
+                <td style="color: white;">Number of floors</td>
+                <td style="color: white;">{{data.floor}}</td>
+              </tr>
+              <tr>
+                <th scope="row" style="color: white;">3</th>
+                <td style="color: white;">Road Access</td>
+                <td style="color: white;">{{data.road}} feet</td>
+              </tr>
+              <tr>
+                <th scope="row" style="color: white;">4</th>
+                <td style="color: white;">Number of bedroom</td>
+                <td style="color: white;">{{data.bed}}</td>
+              </tr>
+              <tr>
+                <th scope="row" style="color: white;">5</th>
+                <td style="color: white;">Number of bathroom</td>
+                <td style="color: white;">{{data.bath}}</td>
+              </tr>
+              <tr>
+                <th scope="row" style="color: white;">6</th>
+                <td style="color: white;">Facing</td>
+                <td style="color: white;">{{data.face}}</td>
+              </tr>
+              <tr>
+                <th scope="row" style="color: white;">7</th>
+                <td style="color: white;">Address</td>
+                <td style="color: white;">{{data.address}}</td>
+              </tr>
+            </tbody>
+            </tbody>
+          </table>
+          <h3 style="color: white;">Your Predicted Price is NRs {{data.price}}</h3>
+          <h3 style="color: white;">Go back and predict more?</h3>
+          <a href="/predict"
+            ><button class="btn btn-primary w-50 py-3" type="submit">
+              Predict More
+            </button></a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{%include "footer.html"%}

@@ -40,61 +40,67 @@
                     <h1 class="mb-4">House Price Prediction</h1>
                     <p class="mb-4">Enter the details of your house below to predict the approximate pricing of you house.</p>
                     <div class="bg-light p-4">
-                        <form method="POST">
+                        <form id="myForm" method="POST">
                             {% csrf_token %}
                             <div class="row g-4">
                                 <div class="col-md-4">
                                     <div class="form-floating">
-                                        <input type="number" class="form-control" id="land"  name="land" placeholder="Land (Sqft)" required>
+                                        <input type="text" class="form-control" id="land"  name="land" placeholder="Land (Sqft)" required>
                                         <label for="land">Land Area in Square feet</label>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-floating">
-                                        <input type="number" class="form-control" id="floor" name="floor" placeholder="Floors" required>
+                                        <input type="text" class="form-control" id="floor" name="floor" placeholder="Floors" required>
                                         <label for="floor">Floors</label>
                                     </div>
                                 </div>
                                 <div class="col-md-2">
                                     <div class="form-floating">
-                                        <input type="number" class="form-control" id="road" name="road" placeholder="Road Access" required>
+                                        <input type="text" class="form-control" id="road" name="road" placeholder="Road Access" required>
                                         <label for="road">Road</label>
                                     </div>
                                 </div>
                                 <div class="col-2">
                                     <div class="form-floating">
-                                        <input type="number" class="form-control" id="bed" name="bed" placeholder="Bedrooms" required>
+                                        <input type="text" class="form-control" id="bed" name="bed" placeholder="Bedrooms" required>
                                         <label for="bed">Bedrooms</label>
                                     </div>
                                 </div>
                                 <div class="col-2">
                                     <div class="form-floating">
-                                        <input type="number" class="form-control" id="bath" name="bath" placeholder="Bathrooms" required>
+                                        <input type="text" class="form-control" id="bath" name="bath" placeholder="Bathrooms" required>
                                         <label for="bath">Bathrooms</label>
                                     </div>
                                 </div>
-                                <!-- <div class="col-4">
+                                <div class="col-4">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="face" name="face" placeholder="Facing" required>
+                                        <select class="form-select" id="face" name="face" required>
+                                            <option value="" disabled selected>Choose a facing</option>
+                                            {% for face in faces %}
+                                                <option value="{{ face }}">{{ face }}</option>
+                                            {% endfor %}
+                                        </select>
                                         <label for="face">Facing</label>
+                                
                                     </div>
                                 </div>
                                 <div class="col-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="address" name="address" placeholder="Facing" required>
-                                        <label for="face">Address</label>
+                                        <select class="form-select" id="address" name="address" required>
+                                            <option value="" disabled selected>Choose a Address</option>
+                                            {% for address in addresses %}
+                                                <option value="{{ address }}">{{ address }}</option>
+                                            {% endfor %}
+                                        </select>
+                                        <label for="address">Address</label>
                                     </div>
-                                </div>  -->
+                                </div> 
                                 <div class="col-12">
                                     <button class="btn btn-primary w-100 py-3" type="submit">Predict</button>
                                 </div>                                                            
                             </div>
                         </form>
-                        <div class="col-12">
-                            <div class="form-floating">
-                                <h4>Your Predicted House price is रू. {{price}}</h4>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
