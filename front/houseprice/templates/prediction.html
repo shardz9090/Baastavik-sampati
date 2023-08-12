@@ -91,8 +91,10 @@
         {% if image is not none and title is not none %}
              
         {% if forloop.counter0|divisibleby:3 %}
+        
         <div class="row card-container">
          {% endif %}
+         
                 <div class="col">
                     <div class="card" style="width: 18rem;">
                         <img src="{{ image }}" class="card-img-top" alt="..." width="500" height="300">
