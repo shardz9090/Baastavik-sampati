@@ -24,5 +24,7 @@ urlpatterns = [
     path('service/', views.service, name='service'),
     path('info/', views.info, name='info'),
     path('contact/', views.contact, name='contact'),
-    path('predict/', views.predict, name='predict'), 
+    path('predict/', views.predict, name='predict'),
+    path('visualization/', views.visualization, name='visualization'),
+    
 ]
