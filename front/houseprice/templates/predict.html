@@ -51,14 +51,14 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="floor" name="floor" placeholder="Floors" required>
-                                        <label for="floor">Floors</label>
+                                        <input type="text" class="form-control" id="floor" name="floor" placeholder="No oFloors" required>
+                                        <label for="floor">No of Floors</label>
                                     </div>
                                 </div>
                                 <div class="col-md-2">
                                     <div class="form-floating">
                                         <input type="text" class="form-control" id="road" name="road" placeholder="Road Access" required>
-                                        <label for="road">Road</label>
+                                        <label for="road">Road(In Feet)</label>
                                     </div>
                                 </div>
                                 <div class="col-2">
@@ -106,8 +106,69 @@
             </div>
         </div>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () 
+        {
+            const landInput = document.getElementById('land');
+            const floorInput=document.getElementById('floor');
+            const roadInput=document.getElementById('road');
+            const bedroomInput=document.getElementById('bed');
+            const bathroomInput=document.getElementById('bath');
+    
+            landInput.addEventListener('input', function () 
+            {
+                
+                this.value = this.value.replace(/[^0-9.]/g, '');
+    
+               
+                const decimalCount = (this.value.match(/\./g) || []).length;
+                if (decimalCount > 1) 
+                {
+                    this.value = this.value.replace(/\.+$/, '');
+                }
+            }
+            );
+            
+           roadInput.addEventListener('input',function()
+           {
+            this.value = this.value.replace(/[^0-9.]/g, '');
+    
+               
+                const decimalCount = (this.value.match(/\./g) || []).length;
+                if (decimalCount > 1) 
+                {
+                    this.value = this.value.replace(/\.+$/, '');
+                }
+            });
 
-
+            floorInput.addEventListener('input',function()
+           {
+            this.value = this.value.replace(/[^0-9.]/g, '');
+    
+               
+                const decimalCount = (this.value.match(/\./g) || []).length;
+                if (decimalCount > 1) 
+                {
+                    this.value = this.value.replace(/\.+$/, '');
+                }
+            });
+            bedroomInput.addEventListener('input',function()
+           {
+            this.value = this.value.replace(/[^0-9]/g, '');
+          
+            });
+            bathroomInput.addEventListener('input',function()
+           {
+            this.value = this.value.replace(/[^0-9]/g, '');
+          
+            });
+            
+        });
+        
+    </script>
+    
+    
+    
 
     {% include "footer.html"%}
 
